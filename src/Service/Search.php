@@ -140,7 +140,7 @@ class Search extends Solr\Client
             'sort' => $this->getSortParam($p),
         ];
 
-        // Setting highlight if query parrameter is present
+        // Setting highlight if query parameter is present
         if (!empty($this->query)) {
             $this->params['hl'] = 'true';
             $this->params['hl.fl'] = 'name'; //,content
@@ -303,7 +303,7 @@ class Search extends Solr\Client
 
     /**
      * Get assign security sets to filters
-     * dont check if 'skipSecurity = true'
+     * don't check if 'skipSecurity = true'
      * it's used in Objects fields where we show all nodes
      * without permission filtering
      *
@@ -331,7 +331,7 @@ class Search extends Solr\Client
 
             } else {
                 // for created users that doesnt belong to any group
-                // and dont have any security sets associated
+                // and don't have any security sets associated
                 // $rez = '!security_set_id:[* TO *]';
                 $rez = 'oid:'.User::getId();
             }
